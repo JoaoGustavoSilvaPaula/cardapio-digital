@@ -13,7 +13,7 @@ export const ScreenContainer = styled(Layout)`
 `;
 export const ScreenContent = styled(Layout)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
   padding: 22px;
   background-color: #fff4f5f7;

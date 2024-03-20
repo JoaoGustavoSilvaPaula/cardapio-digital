@@ -17,7 +17,6 @@ export const CardContainer = styled.div`
   @media (min-width: 1280px) {
     max-width: 400px;
   }
-  
 `;
 
 export const CardContent = styled.div`
