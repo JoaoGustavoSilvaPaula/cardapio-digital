@@ -1,5 +1,5 @@
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
+import { LogoutOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Button, Input } from 'antd';
 import styled from 'styled-components';
 
 export const MyHeader = styled.header`
@@ -27,6 +27,28 @@ export const LogoExit = styled(LogoutOutlined)`
 export const User = styled(UserOutlined)`
   font-size: 30px;
   color: gray;
+`;
+
+export const CartButton = styled.div`
+  height: 100%;
+`;
+
+export const ShoppingCart = styled(ShoppingCartOutlined)`
+  font-size: 30px;
+  color: gray;
+`;
+export const CountItems = styled.span`
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 8pt;
+  text-align: center;
+  line-height: 20px;
+  z-index: 50;
+  margin-left: 20px;
 `;
 
 export const SearchBar = styled.div`

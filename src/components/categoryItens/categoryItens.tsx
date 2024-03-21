@@ -4,6 +4,8 @@ import { convertNumberToMoney } from '../../shared/functions/money';
 import Card from '../card/Card';
 import { CategoryBox, Container } from './categoryItens.style';
 import Anchor from '../anchor/Anchor';
+import ProductDrawer from '../drawer/productDrawer';
+import { Button } from 'antd';
 
 interface CategoryType {
   name: string;
@@ -18,6 +20,16 @@ interface ProductType {
 
 export default function CategoryItens() {
   const [productList, setProductList] = useState<CategoryType[]>([]);
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const handleCartIconClick = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const onClose = () => {
+    setIsDrawerOpen(false);
+  };
 
   const fetchProducts = async () => {
     const response = await api.get('/categories/products');
@@ -44,6 +56,7 @@ export default function CategoryItens() {
               {category.products.map((product, i) => {
                 return (
                   <Card
+                    onClick={handleCartIconClick}
                     key={i}
                     title={product.title}
                     description={product.description}
@@ -56,6 +69,9 @@ export default function CategoryItens() {
           </Container>
         );
       })}
+      <ProductDrawer isOpen={isDrawerOpen} onClose={onClose}>
+        <div>TESTE</div>
+      </ProductDrawer>
     </>
   );
 }

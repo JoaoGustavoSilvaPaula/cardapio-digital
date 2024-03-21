@@ -8,6 +8,9 @@ import {
   SearchInput,
   User,
   HeaderActions,
+  ShoppingCart,
+  CountItems,
+  CartButton,
 } from './header.style';
 
 const { Search } = SearchInput;
@@ -41,6 +44,11 @@ export default function Header() {
             <Search size="large" placeholder="Busque por itens"></Search>
           </SearchBar>
           <HeaderActions>
+            <CartButton>
+              <CountItems>9</CountItems>
+              <ShoppingCart />
+            </CartButton>
+
             <User />
             <LogoExit onClick={showModal}>Sair</LogoExit>
           </HeaderActions>
