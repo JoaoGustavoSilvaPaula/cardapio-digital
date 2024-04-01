@@ -12,12 +12,13 @@ import {
   CountItems,
   CartButton,
 } from './header.style';
+import { useCartStore } from '../../stores/cartStore';
 
 const { Search } = SearchInput;
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
+  const [itensCount] = useCartStore((state) => [state.itensCount]);
   const showModal = () => {
     setOpen(true);
   };
@@ -45,7 +46,7 @@ export default function Header() {
           </SearchBar>
           <HeaderActions>
             <CartButton>
-              <CountItems>9</CountItems>
+              <CountItems>{itensCount}</CountItems>
               <ShoppingCart />
             </CartButton>
 

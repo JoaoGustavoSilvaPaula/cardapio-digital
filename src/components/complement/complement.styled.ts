@@ -55,8 +55,17 @@ export const ComplementButton = styled(Button)`
   margin-top: 10px;
   width: 70%;
   height: 45px;
-  color: rgb(166, 166, 166);
-  background-color: rgb(220, 220, 220);
+  color: white;
+  font-weight: 700;
+  background-color: rgb(26, 26, 26);
+  &:hover {
+    background-color: rgb(63, 62, 62) !important;
+    color: white !important;
+  }
+  &:disabled {
+    color: rgb(166, 166, 166);
+    background-color: rgb(220, 220, 220);
+  }
 `;
 
 export const Container = styled.div`

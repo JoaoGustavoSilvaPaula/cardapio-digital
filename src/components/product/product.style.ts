@@ -11,7 +11,7 @@ export const Title = styled.h1``;
 
 export const Description = styled.p``;
 
-export const ProductContainer = styled.div`
+export const FormProductContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -14,3 +14,8 @@ export const ContainerCount = styled.div`
 export const ButtonCount = styled(Button)`
   border: none;
 `;
+
+export const CountInput = styled.input`
+  border: none;
+  width: 10px;
+`;

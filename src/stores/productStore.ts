@@ -3,6 +3,7 @@ import { create } from 'zustand';
 type product = {
   id: number;
   name: string;
+  count: number;
 };
 type complement = {
   id: number;
@@ -20,8 +21,9 @@ type SelectProdutctState = {
   removeProduct: () => void;
 };
 
+const newProduct = { id: 0, name: '', count: 0 };
 export const useProductStore = create<SelectProdutctState>((set) => ({
-  product: { id: 0, name: '' },
+  product: newProduct,
   complements: [],
   countSelectedComplement: 0,
   addProduct: (item) => set(() => ({ product: item })),
@@ -30,7 +32,7 @@ export const useProductStore = create<SelectProdutctState>((set) => ({
       complements: addOrupdateComplement(state, complement, count),
       countSelectedComplement: state.countSelectedComplement + count,
     })),
-  removeProduct: () => set(() => ({ product: { id: 0, name: '' }, complements: [] })),
+  removeProduct: () => set(() => ({ product: newProduct, complements: [] })),
 }));
 
 function addOrupdateComplement(state: SelectProdutctState, complement: complement, count: number) {
